@@ -2,8 +2,8 @@ import { ContactType } from '@/interFace/interFace';
 
 const contact_data: ContactType = {
   name: 'Fastchow',
-  phone: ['09083536955'],
-  email: ['hello@cc.com'],
+  phone: ['+234 908 353 6866'],
+  email: ['ready@fastchow.com'],
   address: [
     '1, Adedeji Adekola Street, Off Freedom Way, Lekki Phase 1, Lagos State,',
   ],
