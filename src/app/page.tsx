@@ -1,19 +1,20 @@
 //@refresh
 import ProductModal from '@/components/SharedComponents/ProductModal';
-import HomeMain from '@/components/home/HomeMain';
+import HomeTwoMain from '@/components/homeTwo/HomeTwoMain';
 import MetaData from '@/hooks/useMetaData';
-import WrapperStyleOne from '@/layout/WrapperStyleOne';
+import WrapperStyleTwo from '@/layout/WrapperStyleTwo';
+import React from 'react';
+
 const Home = () => {
-  const pageTitle = 'Home';
   return (
     <>
-      <MetaData pageTitle={pageTitle}>
-        <WrapperStyleOne>
+      <MetaData pageTitle="Home Two">
+        <WrapperStyleTwo>
           <main>
-            <HomeMain />
+            <HomeTwoMain />
             <ProductModal />
           </main>
-        </WrapperStyleOne>
+        </WrapperStyleTwo>
       </MetaData>
     </>
   );

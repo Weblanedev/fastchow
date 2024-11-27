@@ -13,7 +13,7 @@ const menu_data: MenuType[] = [
     hasDropdown: true,
     megaMenu: true,
     active: true,
-    title: 'Shop',
+    title: 'Chow',
     link: '#',
     submenus: [
       // {
@@ -29,10 +29,10 @@ const menu_data: MenuType[] = [
       //   //   { title: 'Group Product', link: '/group-product' },
       //   // ],
       // },
-      { title: 'Household', link: '/' },
-      { title: 'Parenting', link: '/' },
-      { title: 'Tools', link: '/' },
-      { title: 'Decor', link: '/' },
+      { title: 'Home Delivery', link: '/' },
+      { title: 'Events', link: '/' },
+      { title: 'Students Discount', link: '/' },
+      { title: 'Vegan', link: '/' },
     ],
   },
   {

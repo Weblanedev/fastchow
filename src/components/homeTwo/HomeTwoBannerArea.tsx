@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper';
 import 'swiper/css/bundle';
-import banner4 from '../../../../public/assets/img/slider-img/fastchow_burger.jpg';
-import banner5 from '../../../../public/assets/img/slider-img/fastchow-wings.jpg';
-import banner6 from '../../../../public/assets/img/slider-img/fastchow_pasta.jpg';
-import bannerBg from '../../../../public/assets/img/slider-img/dispatch.jpeg';
+import banner4 from '../../../public/assets/img/slider-img/fastchow_burger.jpg';
+import banner5 from '../../../public/assets/img/slider-img/fastchow-wings.jpg';
+import banner6 from '../../../public/assets/img/slider-img/fastchow_pasta.jpg';
+import bannerBg from '../../../public/assets/img/slider-img/dispatch.jpeg';
 import Link from 'next/link';
 import Image from 'next/image';
 const HomeTwoBannerArea = () => {
