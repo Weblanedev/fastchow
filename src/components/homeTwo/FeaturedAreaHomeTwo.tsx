@@ -1,6 +1,6 @@
 import LocationIcon from '@/svg/LocationIcon';
 import PaymentIcon from '@/svg/PaymentIcon';
-import ReturnIcon from '@/svg/ReturnIcon';
+// import ReturnIcon from '@/svg/ReturnIcon';
 import ShipingIcon from '@/svg/ShipingIcon';
 import SupportIcon from '@/svg/SupportIcon';
 import React from 'react';

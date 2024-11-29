@@ -1,4 +1,4 @@
-import FaqForm from '@/form/FaqForm';
+// import FaqForm from '@/form/FaqForm';
 import React from 'react';
 
 const FaqFormMain = () => {
@@ -18,7 +18,7 @@ const FaqFormMain = () => {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <div className="contact-form">
-                <FaqForm />
+                {/* <FaqForm /> */}
                 <p className="ajax-response mb-0"></p>
               </div>
             </div>

@@ -1,6 +1,6 @@
-"use client";
-import { useForm, SubmitHandler } from "react-hook-form";
-import React from "react";
+'use client';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import React from 'react';
 interface FormData {
   name: string;
   email: string;
@@ -10,7 +10,7 @@ interface FormData {
   paymentId: string;
   productName: string;
 }
- 
+
 const RefundForm = () => {
   const {
     register,
@@ -18,24 +18,24 @@ const RefundForm = () => {
     formState: { errors },
   } = useForm<FormData>();
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    const name = data.name;
-    const email = data.email;
-    const phone = data.phone;
-    const message = data.message;
-    const productId = data.productId;
-    const paymentId = data.paymentId;
-    const productName = data.productName;
-
-    const userInfo = {
-      name,
-      email,
-      phone,
-      message,
-      productId,
-      paymentId,
-      productName,
-    };
+  // const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit: SubmitHandler<FormData> = () => {
+    //   const name = data.name;
+    //   const email = data.email;
+    //   const phone = data.phone;
+    //   const message = data.message;
+    //   const productId = data.productId;
+    //   const paymentId = data.paymentId;
+    //   const productName = data.productName;
+    //   const userInfo = {
+    //     name,
+    //     email,
+    //     phone,
+    //     message,
+    //     productId,
+    //     paymentId,
+    //     productName,
+    //   };
   };
 
   return (
@@ -58,8 +58,8 @@ const RefundForm = () => {
                           <input
                             type="text"
                             placeholder="Enter product id"
-                            {...register("name", {
-                              required: "Product id is required",
+                            {...register('name', {
+                              required: 'Product id is required',
                             })}
                           />
 
@@ -75,8 +75,8 @@ const RefundForm = () => {
                           <input
                             type="text"
                             placeholder="Enter payment id"
-                            {...register("paymentId", {
-                              required: "Payment id  required",
+                            {...register('paymentId', {
+                              required: 'Payment id  required',
                             })}
                           />
                           {errors.paymentId && (
@@ -91,8 +91,8 @@ const RefundForm = () => {
                           <input
                             type="text"
                             placeholder="Enter Phone"
-                            {...register("phone", {
-                              required: "Phone required",
+                            {...register('phone', {
+                              required: 'Phone required',
                             })}
                           />
                           {errors.phone && (
@@ -107,8 +107,8 @@ const RefundForm = () => {
                           <input
                             type="email"
                             placeholder="Email"
-                            {...register("email", {
-                              required: "Email is required",
+                            {...register('email', {
+                              required: 'Email is required',
                             })}
                           />
                           {errors.email && (
@@ -123,8 +123,8 @@ const RefundForm = () => {
                           <input
                             type="text"
                             placeholder="Product Name"
-                            {...register("productName", {
-                              required: "Product Name is required",
+                            {...register('productName', {
+                              required: 'Product Name is required',
                             })}
                           />
                           {errors.productName && (
@@ -139,8 +139,8 @@ const RefundForm = () => {
                           <textarea
                             id="message"
                             placeholder="What is Reason For Refund  ...?"
-                            {...register("message", {
-                              required: "Reason is required",
+                            {...register('message', {
+                              required: 'Reason is required',
                             })}
                           />
                           {errors.message && (

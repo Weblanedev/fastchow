@@ -1,20 +1,20 @@
-"use client";
-import { getColorClass, getTagClass } from "@/hooks/condition-class";
-import useGlobalContext from "@/hooks/use-context";
-import { ProductsType } from "@/interFace/interFace";
-import { cart_product } from "@/redux/slices/cartSlice";
-import { cart_compare_product } from "@/redux/slices/compareSlice";
-import { wishlist_product } from "@/redux/slices/wishlistSlice";
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link"; 
-import React, { useState } from "react";
-import { useDispatch } from "react-redux"; 
+'use client';
+import { getColorClass, getTagClass } from '@/hooks/condition-class';
+import useGlobalContext from '@/hooks/use-context';
+import { ProductsType } from '@/interFace/interFace';
+import { cart_product } from '@/redux/slices/cartSlice';
+import { cart_compare_product } from '@/redux/slices/compareSlice';
+import { wishlist_product } from '@/redux/slices/wishlistSlice';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 interface propsType {
   item: ProductsType;
 }
 const SingleProductCard = ({ item }: propsType) => {
   const { setDynamicId } = useGlobalContext();
-  const [size, setSize] = useState<string>(item?.sizeArray?.[0] as string);
+  const [size] = useState<string>(item?.sizeArray?.[0] as string);
   const dispatch = useDispatch();
   const [activeImg, setActiveImg] = useState(0);
   const [productImg, setProductImg] = useState<StaticImageData>();
@@ -22,7 +22,6 @@ const SingleProductCard = ({ item }: propsType) => {
     setProductImg(item.activeImg);
     setActiveImg(index);
   };
- 
 
   const handleAddToCart = (item: ProductsType) => {
     const newCardProduct = { ...item };
@@ -35,15 +34,15 @@ const SingleProductCard = ({ item }: propsType) => {
     newCardProduct.productImg = productImg ? productImg : item?.productImg;
     dispatch(cart_compare_product(newCardProduct));
   };
-  const status = item?.status ? item?.status : ''
-  const tagClass = getTagClass(status)
+  const status = item?.status ? item?.status : '';
+  const tagClass = getTagClass(status);
   return (
     <>
       <div className="single-product">
         <div className="product-image pos-rel">
           <Link href={`/shop-details/${item.id}`} className="">
             <Image
-              style={{ width: "100%", height: "auto" }}
+              style={{ width: '100%', height: 'auto' }}
               src={productImg ? productImg : item?.productImg}
               alt="img"
             />
@@ -61,14 +60,18 @@ const SingleProductCard = ({ item }: propsType) => {
             >
               <i className="fal fa-eye"></i>
             </button>
-            <button 
+            <button
               onClick={() => dispatch(wishlist_product(item))}
               type="button"
-              className="wishlist-btn" 
+              className="wishlist-btn"
             >
               <i className="fal fa-heart"></i>
             </button>
-            <button onClick={()=>handleAddToCompare(item)} type="button" className="compare-btn">
+            <button
+              onClick={() => handleAddToCompare(item)}
+              type="button"
+              className="compare-btn"
+            >
               <i className="fal fa-exchange"></i>
             </button>
           </div>
@@ -85,13 +88,13 @@ const SingleProductCard = ({ item }: propsType) => {
             <>
               <div className="product-sticker-wrapper">
                 <span className={`product-sticker ${tagClass}`}>
-                  {item?.status === "Discounted"
+                  {item?.status === 'Discounted'
                     ? `-${item?.discount}%`
                     : item.status}
                 </span>
               </div>
             </>
-          ) : ( 
+          ) : (
             <></>
           )}
         </div>
@@ -113,14 +116,14 @@ const SingleProductCard = ({ item }: propsType) => {
             <>
               <ul className="product-color-nav">
                 {item?.productColorArray?.map((colorItems, index) => {
-                  const dynamicColor = getColorClass(colorItems.color)
+                  const dynamicColor = getColorClass(colorItems.color);
                   return (
                     <li
-                    title={colorItems.color}
+                      title={colorItems.color}
                       onClick={() => handleImg(colorItems, index)}
                       key={index}
                       className={`${dynamicColor} ${
-                        activeImg === index ? "active" : ""
+                        activeImg === index ? 'active' : ''
                       }`}
                     >
                       <Image src={colorItems.activeImg} alt="img" />

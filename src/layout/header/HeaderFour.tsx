@@ -1,20 +1,20 @@
-import React from "react";
-import Menu from "./components/Menu";
-import Link from "next/link";
-import logo from "../../../public/assets/img/logo/logo-bl.png";
-import Image from "next/image";
-import useGlobalContext from "@/hooks/use-context";
+import React from 'react';
+import Menu from './components/Menu';
+import Link from 'next/link';
+import logo from '../../../public/assets/img/logo/logo-bl.png';
+import Image from 'next/image';
+import useGlobalContext from '@/hooks/use-context';
 import {
   useTotalProductCount,
   useTotalProductWishlistCount,
   useUniqueCompareCount,
-} from "@/hooks/useCartQuantity";
-import NiceSelectTwo from "@/components/common/NiceSelectTwo";
-import { currency_data, language_data } from "@/data/nice-select-data";
-import SearchComponent from "./components/SearchComponent";
-import { useRouter } from "next/navigation";
+} from '@/hooks/useCartQuantity';
+// import NiceSelectTwo from "@/components/common/NiceSelectTwo";
+// import { currency_data, language_data } from "@/data/nice-select-data";
+import SearchComponent from './components/SearchComponent';
+import { useRouter } from 'next/navigation';
 const HeaderFour = () => {
-  const router = useRouter() 
+  const router = useRouter();
   const {
     setSideCartOpen,
     sideCartOpen,
@@ -22,15 +22,15 @@ const HeaderFour = () => {
     setSideWishlistOpen,
     scrollDirection,
     toggleSideMenu,
-  } = useGlobalContext(); 
+  } = useGlobalContext();
 
   const totalCart = useTotalProductCount();
   const totatWishlist = useTotalProductWishlistCount();
   const totatCompare = useUniqueCompareCount();
-  const selectHandler = () => {};
-  const handleCompare = () =>{
-    router.push("/compare")
-  }
+  // const selectHandler = () => {};
+  const handleCompare = () => {
+    router.push('/compare');
+  };
   return (
     <>
       <header className="header1">
@@ -52,7 +52,7 @@ const HeaderFour = () => {
                   <Link href="/login" className="text-btn">
                     <i className="flaticon-avatar"></i>Sign in
                   </Link>
-                  <NiceSelectTwo
+                  {/* <NiceSelectTwo
                     options={language_data}
                     defaultCurrent={0}
                     onChange={selectHandler}
@@ -65,7 +65,7 @@ const HeaderFour = () => {
                     onChange={selectHandler}
                     name="currency-select"
                     className="currency-select border-left"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
@@ -74,7 +74,7 @@ const HeaderFour = () => {
         <div
           id="header-sticky"
           className={`header-main header-main1 ${
-            scrollDirection === "down" ? "sticky" : ""
+            scrollDirection === 'down' ? 'sticky' : ''
           }`}
         >
           <div className="container">
@@ -119,7 +119,6 @@ const HeaderFour = () => {
                         </button>
                       </div>
 
-
                       <div className="action-item action-item-wishlist action-item-compare">
                         <button
                           onClick={handleCompare}
@@ -133,7 +132,10 @@ const HeaderFour = () => {
                         </button>
                       </div>
                     </div>
-                    <div onClick={toggleSideMenu} className="menu-bar ecomart-menu-bar d-xl-none ml-20"> 
+                    <div
+                      onClick={toggleSideMenu}
+                      className="menu-bar ecomart-menu-bar d-xl-none ml-20"
+                    >
                       <Link className="side-toggle" href="">
                         <div className="bar-icon">
                           <span></span>

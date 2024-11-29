@@ -1,23 +1,23 @@
-"use client";
-import React, { useState } from "react";
-import Menu from "./components/Menu";
-import logo from "../../../public/assets/img/logo/logo-bl-tr.png";
-import Image from "next/image";
-import Link from "next/link";
-import useGlobalContext from "@/hooks/use-context";
+'use client';
+import React, { useState } from 'react';
+import Menu from './components/Menu';
+import logo from '../../../public/assets/img/logo/logo-bl-tr.png';
+import Image from 'next/image';
+import Link from 'next/link';
+import useGlobalContext from '@/hooks/use-context';
 import {
   useTotalProductCount,
   useTotalProductWishlistCount,
   useUniqueCompareCount,
-} from "@/hooks/useCartQuantity";
-import NiceSelectTwo from "@/components/common/NiceSelectTwo";
-import { currency_data, language_data } from "@/data/nice-select-data";
-import SearchComponent from "./components/SearchComponent";
-import { useRouter } from "next/navigation";
-import SearchHeaderTwo from "./components/SearchHeaderTwo";
+} from '@/hooks/useCartQuantity';
+// import NiceSelectTwo from '@/components/common/NiceSelectTwo';
+// import { currency_data, language_data } from "@/data/nice-select-data";
+import SearchComponent from './components/SearchComponent';
+import { useRouter } from 'next/navigation';
+// import SearchHeaderTwo from './components/SearchHeaderTwo';
 const HeaderThree = () => {
   const [open, setOpen] = useState(true);
-  const router = useRouter() 
+  const router = useRouter();
   const {
     setSideCartOpen,
     sideCartOpen,
@@ -30,17 +30,17 @@ const HeaderThree = () => {
   const totalCart = useTotalProductCount();
   const totatWishlist = useTotalProductWishlistCount();
   const totatCompare = useUniqueCompareCount();
-  const selectHandler = () => {};
+  // const selectHandler = () => {};
 
-  const handleCompare = () =>{
-    router.push("/compare")
-  }
+  const handleCompare = () => {
+    router.push('/compare');
+  };
   return (
     <>
       <header className="header4">
         <div
           className="header-note"
-          style={{ display: open ? "block" : "none" }}
+          style={{ display: open ? 'block' : 'none' }}
         >
           <p>
             Get your entire order with an extra <span>25%</span> OFF for this
@@ -60,7 +60,7 @@ const HeaderThree = () => {
                   </Link>
                   <Link href="/register" className="text-btn">
                     My account
-                  </Link> 
+                  </Link>
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6 col-md-6">
@@ -68,7 +68,7 @@ const HeaderThree = () => {
                   <Link href="/login" className="text-btn">
                     <i className="flaticon-avatar"></i>Sign in
                   </Link>
-                  <NiceSelectTwo
+                  {/* <NiceSelectTwo
                     options={language_data}
                     defaultCurrent={0}
                     onChange={selectHandler}
@@ -81,7 +81,7 @@ const HeaderThree = () => {
                     onChange={selectHandler}
                     name="currency-select"
                     className="currency-select border-left"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@ const HeaderThree = () => {
         <div
           id="header-sticky"
           className={`header-main header-main1 ${
-            scrollDirection === "down" ? "sticky" : ""
+            scrollDirection === 'down' ? 'sticky' : ''
           }`}
         >
           <div className="container">
@@ -145,7 +145,7 @@ const HeaderThree = () => {
                             {totatCompare}
                           </span>
                         </button>
-                      </div> 
+                      </div>
                     </div>
                     <div
                       onClick={toggleSideMenu}

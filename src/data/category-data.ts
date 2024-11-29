@@ -3,7 +3,7 @@ import category1 from '../../public/assets/img/product_category/product-cat-1.jp
 import category2 from '../../public/assets/img/product_category/product-cat-2.jpg';
 import category3 from '../../public/assets/img/product_category/product-cat-3.jpg';
 import category4 from '../../public/assets/img/product_category/product-cat-4.jpg';
-import category5 from '../../public/assets/img/product_category/product-cat-5.jpg';
+// import category5 from '../../public/assets/img/product_category/product-cat-5.jpg';
 import category6 from '../../public/assets/img/product_category/product-cat-6.jpg';
 import category7 from '../../public/assets/img/product_category/product-cat-7.jpg';
 import category8 from '../../public/assets/img/product_category/product-cat-8.jpg';

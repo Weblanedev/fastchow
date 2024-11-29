@@ -20,4 +20,4 @@ const HomeThreePage = () => {
   );
 };
 
-// export default HomeThreePage;
+export default HomeThreePage;

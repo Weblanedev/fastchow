@@ -1,37 +1,36 @@
-
-import { usePathname } from "next/navigation";
-import { useEffect } from "react";
-import useGlobalContext from "./use-context";
+import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
+import useGlobalContext from './use-context';
 
 const useScrollDirection = (element: HTMLElement | null) => {
-  const { scrollDirection, setScrollDirection } = useGlobalContext()
+  const { scrollDirection, setScrollDirection } = useGlobalContext();
   const pathName = usePathname();
 
   useEffect(() => {
-    let prevScrollY = window.scrollY;
+    // let prevScrollY = window.scrollY;
 
     const handleScroll = () => {
       const isAtTop = window.scrollY === 0;
-      setScrollDirection?.(isAtTop ? "up" : "down");
-      prevScrollY = window.scrollY;
+      setScrollDirection?.(isAtTop ? 'up' : 'down');
+      // prevScrollY = window.scrollY;
     };
 
     const handleClick = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     if (element) {
-      element.addEventListener("click", handleClick);
+      element.addEventListener('click', handleClick);
     }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [element, setScrollDirection]);
   // Use the pathName to trigger setScrollDirection("up") when the pathname changes.
   useEffect(() => {
-    setScrollDirection?.("up");
+    setScrollDirection?.('up');
   }, [pathName, setScrollDirection]);
 
   return scrollDirection;
